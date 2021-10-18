@@ -1,0 +1,218 @@
+/*Add Edit*/
+
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="number"], textarea{
+  color: blueviolet;
+  border-color: blueviolet;
+  background-color:#fff;
+  box-shadow:inset, 0 0 8px rgb(0.54,0.17,0.5);
+  outline: 0 none;
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="number"]:focus, textarea:focus{
+  color: #fff;
+  border-color: blueviolet;
+  background-color:rgb(163, 64, 255);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.075) inset, 0 0 8px	rgba(54.1, 16.9, 88.6);
+  outline: 0 none;
+}
+
+label{
+  color: #000;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.btn-btn{
+ border:none; 
+ background-color: blueviolet;
+ padding: 4px 16px;
+ border-radius:5px ;
+}
+.btn-btn:hover{
+ color:#fff;
+ opacity: 0.7;
+}
+.btn-regis{
+    border:1px solid  rgb(165, 163, 163); 
+        color: rgb(165, 163, 163);
+ padding: 4px 16px;
+ border-radius:20px;
+ background-color: transparent;
+}
+.btn-regis:hover{
+    border:none; 
+ color:#fff;
+ background-color: blueviolet;
+}
+.btn-regis a{
+    text-decoration: none;
+    color:  rgb(165, 163, 163);
+}
+.btn-regis a:hover{
+    text-decoration: none;
+    color: #fff;
+}
+.btn-login{
+ border:none; 
+ background-color: blueviolet;
+ padding: 8px 40px;
+ border-radius:20px;
+}
+.btn-login:hover{
+    color: #fff;
+    opacity: 0.8;
+}
+
+.popup-box {
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.box {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  margin-top: calc(100vh - 85vh - 50px);
+  background: #fff;
+  border-radius: 4px;
+  padding: 5px;
+  border: 1px solid #999;
+  overflow: auto;
+}
+.login-bg{
+    width: 100%;
+    background-color: blueviolet !important;
+}
+.login-img{
+float: left;
+ width: 40%;
+ height: 70%;
+ background-color: blueviolet !important;
+}
+
+.login-img img{
+ width: 377px;
+ height: 550px;
+}
+.login-txt{
+ float: right;
+ width: 60%;
+ height: 70%;
+ background-color: #fff;
+ text-align: left;
+ padding: 20px 50px 20px 50px;
+}
+.login-txt h2{
+    color: #000;
+    margin-top: 30px;
+}
+.login-txt h6{
+    color: rgb(165, 163, 163);
+}
+.login-txt .txt-head{
+    text-align: right;
+    color: rgb(165, 163, 163);
+}
+.txt-foot{
+    position: absolute;
+    bottom: 20px;
+    text-align: left;
+    color: rgb(165, 163, 163);
+}
+.txt-foot button{
+   border: 1px solid rgb(165, 163, 163);
+   border-radius: 20px;
+   margin: 0 5px 0 5px;
+   background-color: transparent;
+
+}
+.registerd-login{
+  margin-top: 40px;
+}
+
+.wrap-bar{
+    width: 100%;
+}
+.wrap-bar h5{
+    float: left;
+}
+.barstyle{
+    width: 60%;
+    float:right;
+    margin-right: 2rem;
+    border: none; 
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+.search-bar input[type="text"]{
+    color: #000;
+    background-color: rgb(218, 217, 217) !important;
+    text-align: center;
+}
+.search-bar input[type="text"]:focus {
+ 
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.075) inset, 0 0 5px	rgb(96, 96, 97);
+  outline: 0 none;
+  
+}
+.search-icon {
+        float:right;
+position: relative;
+    right: 4rem;
+    line-height: 2.375rem;
+    text-align: center;
+    color: #7B7B7B;
+    font-size: '15px';
+}
+
+/*Scroller*/
+::-webkit-scrollbar {
+  width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-image: -webkit-gradient(linear, left bottom, left top, from(#d5adc8), to(#b490ca));
+background-image: -webkit-linear-gradient(bottom, #d5adc8 0%, #b490ca 100%);
+background-image: linear-gradient(to top, #d5adc8 0%, #b490ca 100%);
+}
+
+.filter-wraper{
+  display: flex;
+  justify-content: end;
+    background-color: #fff;
+    box-shadow: 0 0 5px 2px  rgba(0, 0, 0, .1);
+    border-radius: 15px;
+    padding: 1px 8px;
+    margin: 0.5rem 3rem 0.5rem 0.5rem;
+}
+.filter-wraper button{
+    color: rgb(165, 163, 163);
+    background-color: transparent;
+    padding: 2px 20px;
+    margin: 4px;
+    border: none;
+}
+.filter-wraper button:hover{
+    color: #fff;
+    background-image: linear-gradient(to left, blueviolet , #32174d);
+    border-radius: 20px; 
+}
+.filter-wraper button:focus{
+    color: #fff;
+   background-image: linear-gradient(to left, blueviolet , #32174d);
+    border-radius: 20px; 
+}
+
+
+.form{
+    padding-left: 50px;
+}
