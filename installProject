@@ -1,0 +1,5 @@
+$ git clone 
+https://github.com/PraepilaiPisansin/CRUD.git
+
+go to CRUD project
+$ npm install
