@@ -4,9 +4,7 @@ import './index.css';
 import './style/Navbar.css';
 import './style/list.css';
 import './style/index.css';
-//import './style/index.css';
-
-//import './styles/ProductList.css';
+import './style/popup.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';

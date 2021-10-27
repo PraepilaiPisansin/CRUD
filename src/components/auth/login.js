@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link} from "react-router-dom";
+
 function LogUser({ setToken }) {
     const [data, logUser] = useState({
         email: "",
@@ -15,7 +17,7 @@ function LogUser({ setToken }) {
         <div class="registerd-login">
             <h1>Already Logged In</h1>
             <hr/>
-            <button class="btn-regis"><a href="/">Return to the Home page</a></button>
+            <button class="btn-regis"><a href="/home">Return to the Home page</a></button>
         </div>
         </main>
         
@@ -31,30 +33,36 @@ function LogUser({ setToken }) {
         }
     };
     return (
-        <div class="popup-box">
-            <div class="box">
-                <div class="login-bg">
-                    <div class="login-img">
-                        <img src={'https://th.bing.com/th/id/R.71bb5610f583afa613bf6de7c16d05d6?rik=SHodgTm9OQ68PQ&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f12%2fBlue-and-Purple-Background-Free-Download.jpg&ehk=X9aqgux92YWnp7AJGbbp80lkqkePmFuOOfu6ZtDM5is%3d&risl=&pid=ImgRaw&r=0'} />
-                    </div>
+        <div class="row justify-content-center bg-login">
+        <div class="col-9 mt-5 mb-5 bg-white" style={{padding:'0px'}} >
+            <div class="row " >
+                <div class= "col-6" style={{padding:'0'}}>
+                        <img src={'https://sv1.picz.in.th/images/2021/10/26/uErCyt.jpg'} 
+                        width='100%' height='600vh'
+                        />
                 </div>
 
-                <div class="login-txt">
-                    <p class="txt-head">Already have an account? <button class="btn-regis">
-                        <a href="/users/register">Sign in</a>
+                    <div class=" col-6" style={{ padding: '4vh 8vh 4vh 8vh' }}>
+                    <p class="txt-head">Don't you have an account? <button class="btn-regis">
+                        <a href="/users/register">Sign up</a>
+                        {/*<Link
+                            to={`/users/register`}
+                        >
+                            Sign up
+                        </Link>*/}
                     </button></p>
 
-                    <h2>Welcome to Login!</h2>
-                    <h6 class="sub-topic">Register your account</h6>
+                    <h2>Welcome</h2>
+                    <h6 class="sub-topic">Login your account</h6>
                     <br/>
                     <form onSubmit={e => onSubmit(e)}>
 
                         <div class="form-group mb-4">
-                            <label>Email</label>
+                            <label>Username</label>
                             <input
                                 type="email"
                                 class="form-control"
-                                placeholder="Enter Email"
+                                placeholder="Your Email"
                                 name="email"
                                 value={email}
                                 onChange={e => onInputChange(e)}
@@ -65,16 +73,18 @@ function LogUser({ setToken }) {
                             <input
                                 type="password"
                                 className="form-control"
-                                placeholder="Enter Password"
+                                placeholder="Your Password"
                                 name="password"
                                 value={password}
                                 onChange={e => onInputChange(e)}
                             />
                         </div>
+                        
+                            <p style={{ color:'#a5a3a3'}}>forgot password ?</p>
                         <button class="btn-login mb-1" >Login</button>
                     </form>
-
-                    <p class="txt-foot">Create account with 
+                    <br/>
+                    <p class="txt-foot">Login with 
                             <button><i class="text-primary bi bi-facebook"></i></button>
                         <button><i class="text-danger bi bi-google"></i></button>
                         <button><i class="text-primary bi bi-twitter"></i></button>
@@ -82,6 +92,7 @@ function LogUser({ setToken }) {
                 </div>
 
                 
+            </div>
             </div>
         </div>
     );

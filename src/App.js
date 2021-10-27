@@ -21,6 +21,7 @@ function App() {
     return <Login setToken={setToken} />
   if (token == null && window.location.pathname == "/users/register")
     return <Registration setToken={setToken} />
+    
   const isLoggedIn = sessionStorage.getItem('isLoggedIn');
   return (
     <Router>
@@ -29,6 +30,7 @@ function App() {
 
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/users" component={Home} />
           <Route exact path="/users/add" component={AddUser} />
           <Route exact path="/users/register" component={Registration} />
           <Route exact path="/users/login" component={Login} />

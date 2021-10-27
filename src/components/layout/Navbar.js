@@ -20,29 +20,28 @@ function Navbar({ isLoggedIn }) {
             {/* Sidebar*/}
             <aside class="sidebar">
                 <nav class="navbar ">
-                    <ul>
-                        <NavLink className="navbar-brand" to ="/">
-                            USERs
-        </NavLink>
-
-                        <li ><NavLink activeClassName="side-active dd" exact to='/' ><i class="bi bi-house-fill"></i> Home</NavLink></li>
-
-
-                        <li ><NavLink activeClassName="side-active" exact to='/users/add' ><i class="bi bi-plus-circle"></i> Add User</NavLink></li>
-
-
-                        <li > <NavLink activeClassName="side-active" exact to="/etc" onClick={() => { logout() }}><i class="bi bi-box-arrow-left"></i>    {status}
+                    <div class="row side-nav">
+                        <NavLink className="navbar-brand" to="/"><button><i class="bi bi-card-heading"> Data detail</i>
+                        </button>
                         </NavLink>
-                        </li>
+                        <NavLink activeClassName="side-nav-active" exact to='/'><button><i class="bi bi-person-lines-fill"><a>Users</a></i> </button></NavLink>
+                        <NavLink activeClassName="side-nav-active " to='/topic1'><button><i class="bi bi-house-fill"><a>Topic1</a></i></button></NavLink>
+                        <NavLink activeClassName="side-nav-active " to='/topic2'><button><i class="bi bi-book-half"><a>Topic2</a></i></button></NavLink>
+                        <NavLink activeClassName="side-nav-active " to='/topic3'><button><i class="bi bi-briefcase-fill"><a>Topic3</a></i></button></NavLink>
+                        <NavLink activeClassName="side-nav-active " to='/topic4'><button><i class="bi bi-building"><a>Topic4</a></i></button></NavLink>
+                        {/*<NavLink activeClassName="side-nav-active" to='/users/add' ><button><i class="bi bi-plus-circle-fill"><a>Add User</a></i></button></NavLink>*/}
+                        <NavLink activeClassName="side-nav-active" to='/login' onClick={() => { logout() }}><button><i class="bi bi-box-arrow-left"><a>{status}</a></i> </button></NavLink>
+                    </div>
 
-                    </ul>
-                    
-                   
                 </nav>
-<div class="line"></div>
-                <ul class="nav-foot">
-                    <li ><NavLink activeClassName="side-active" exact to='/setting' ><i class="bi bi-gear-fill"></i> Setiing</NavLink></li>
-                </ul>
+
+
+
+
+                <div class="line"></div>
+                <div class="side-nav nav-foot">
+                    <NavLink activeClassName="side-nav-active" exact to='/setting' ><button><i class="bi bi-gear-fill"></i> Setiing</button></NavLink>
+                </div>
             </aside>
 
 

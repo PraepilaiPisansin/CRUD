@@ -1,18 +1,18 @@
 import React from 'react';
 const SearchBox = (props) => {
     return (
-        <div class="search-bar">
-            <span><i class="bi bi-search search-icon"></i></span>
+        <div class="search-bar  ">
+          
             <input
                 type='text'
-                placeholder={"search user"}
+                placeholder={'Search User'}
                 //onChange={(e) => setKeyword(e.target.value)}
                 //value={value}
                 onChange={e => props.searchUser(e)}
-                className="barstyle "
+                className="barstyle"
 
             />
-
+            <span><i class="bi bi-search search-icon"></i></span>
         </div>
     );
 }

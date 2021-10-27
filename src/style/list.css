@@ -4,17 +4,12 @@ float: left;
  border-radius: 10px;
     box-shadow: 0 0 5px 2px  rgba(0, 0, 0, .1);
   transition: all .2s ease-in-out;
-background-color: rgb(243, 238, 248);
-
-
+background-color: #fff;
 }
 .products-wrap:hover{
   cursor: pointer;
 transform: scale(1.09);
-background-color: rgb(225, 197, 250);
-    box-shadow: 0 0 8px 3px rgb(138,43,226,0.5);
-
-
+    box-shadow: 0 0 8px 3px rgba(188, 213, 251, 1);
 }
 .products{
   padding: 15px;
@@ -35,15 +30,23 @@ background-color: rgb(225, 197, 250);
   left:-1rem;
   width: 25%;
   padding: 4px 8px;
-  color: #000;
-  background-color: orange;
+   background-color: #fef3ef;
   border-radius: 15px 50px 50px 5px;
+}
+.products-id i{
+  text-align: center;
+   background-color: #ed9366;
+  background-image: linear-gradient(to top, #ed9366, #f0bc93);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .products-id a{
   text-align: center;
+color: #ed9366 !important;
+font-weight: bold;
 }
 .products-name{
-  color:purple;
+  color:#4a4c65;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
@@ -51,32 +54,36 @@ background-color: rgb(225, 197, 250);
 }
 
 .products-email{
-  color:gray;
+  color:#b8bbbf;
   font-size: 16px;
   text-align: center;
 }
 .btn-custom{
+  position: relative;
+  bottom: -10px;
   flex-direction: row;
 }
 .btn-custom button{
   color: gray;
   border:none;
-  padding:6px 12px;
   text-align: center;
-  background-color: #fff;
+  background-color: #f9fcff;
+  padding:4px 8px;
 
 }
 .btn-custom button:hover{
   color:#fff;
-  background-color: blueviolet;
+   background-image: linear-gradient(to right, #0568f3 , #009efb);
+
 }
 
-.btn-custom a{
+.btn-custom button a{
   text-decoration: none;
   color: gray;
 }
-.btn-custom a:hover{
+.btn-custom button a:hover{
    color:#fff;
-  background-color: blueviolet;
+    background-image: linear-gradient(to right, #0568f3 , #009efb);
+
 }
 

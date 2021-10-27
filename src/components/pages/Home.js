@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link} from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import SearchBox from "./SearchBox";
+import Popup from '../layout/Popup';
+import AddUser from "../users/AddUser";
 function Home() {
     const [data, setData] = useState([{}]);
+    //add toggle
+    const [isOpen, setIsOpen] = useState(false);
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+    }
+    //token
     const token = sessionStorage.getItem('token');
     const [searchTerm, setSearchTerm] = useState(() => {
         return ""
@@ -18,7 +26,7 @@ function Home() {
         if (sessionStorage.getItem('firstTime') == 1) {
             const result = await axios.get("https://reqres.in/api/users", {
                 headers: {
-                    Authorization: 'Bearer ' + token
+                    Authorization: 'Bearer' + token
                 }
             });
             setData(result.data.data);
@@ -63,51 +71,81 @@ function Home() {
     };
     return (
         <main class="main">
-            <div class="wrap-bar">
-                <h5>Users</h5>
-                <SearchBox searchUser={searchUser}></SearchBox>
+            <div class="wrap-bar mb-3">
+                <div class="row">
+                    <div class="col-2">
+                        <h5>Users</h5>
+                    </div>
+                    <div class="col-10 text-right">
+                        <SearchBox searchUser={searchUser}></SearchBox>
+                    </div>
+                </div>
+
+
+
             </div>
-            <br />
-            <br />
-            <div class="filter-wraper">
-                
-                    <button>All</button>
-                    <button>Men</button>
-                    <button>Women</button>
-                <button></button>
-                
+            <div class="filter-wraper mb-3">
+                <div class="row">
+                    <div class="col-9">
+                        <button >All</button>
+                        <button >Men</button>
+                        <button >Women</button>
+                    </div>
 
-               
-                    <button><i class="bi bi-grid-3x2-gap-fill"></i></button>
-                    <button><i class="bi bi-layout-sidebar"></i></button>
-                <button></button>
+                    <div class="col-3 grid-lish">
+                        <i class="bi bi-grid-3x2-gap-fill"></i>
+                        <i class="bi bi-layout-sidebar"></i>
+                    </div>
+                </div>
 
-                <button><i class="bi bi-funnel-fill"></i></button>
-                
+
             </div>
 
-          
+
+            <div class='btn-flex'>
+                <input
+                    type="button"
+                    value="Add User"
+                    onClick={togglePopup}
+                />
+                {isOpen && <Popup
+                    content={<>
+                        <AddUser />
+                    </>}
+                    handleClose={togglePopup}
+                />}
+            </div>
+
             <div class="scrollable">
                 {data?.map((user, i) =>
                     <div class="products-wrap">
                         <div class="products">
-                            
-                           <p class="products-id"><i class="bi bi-star-fill"></i> <a>{user.id}</a></p>
-                            
+
+                            <p class="products-id"><i class="bi bi-star-fill"></i> <a>{user.id}</a></p>
+
                             <img src={user.avatar} />
 
                             <p class="products-name">{user.first_name + " " + user.last_name}</p>
-                            <p class="products-email"><i class="bi bi-envelope"></i> {user.email}</p>
+                            <p class="products-email mt-2 mb-4"><i class="bi bi-envelope"></i> {user.email}</p>
                             {user.job}
 
                             <div class="row btn-custom">
-                                <button class="col-6">
-                                        <Link
+                                
+                                     
+                                
+                                <button class="col-6" style={{
+                                    borderRadius
+                                        : '0 0 0 10px', borderRight: '1px solid'
+                                }}>
+                                    <Link
                                         to={`/users/edit/${user.id}`}
                                     >
                                         <i class="bi bi-pencil-square"></i><a> Edit</a>
                                     </Link></button>
-                                <button class="col-6"
+                                <button class="col-6" style={{
+                                    borderRadius
+                                        : '0 0 10px 0'
+                                }}
                                     onClick={() => {
                                         const confirm = window.confirm("Confirm Delete");
                                         if (confirm == true) {
@@ -125,28 +163,9 @@ function Home() {
 
             </div>
 
-                                {/*<td className="align-middle">
-                                    <Link
-                                        class="btn btn-outline-primary mr-2"
-                                        to={`/users/edit/${user.id}`}
-                                    >
-                                        Edit
-      </Link>
-                                    <Link
-                                        class="btn btn-danger"
-                                        onClick={() => {
-                                            const confirm = window.confirm("Confirm Delete");
-                                            if (confirm == true) {
-                                                deleteUser(user.id);
-                                            }
-                                        }}
-                                    >
-                                        Delete
-      </Link>
-                                    </td>
-                            </tr>*/}
-                            </main>
-                       
+
+        </main>
+
     );
 };
 export default Home;

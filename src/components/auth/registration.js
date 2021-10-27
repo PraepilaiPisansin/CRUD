@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+
 function RegUser({ setToken }) {
     const [data, regUser] = useState({
         email: "",
         password: ""
     });
-    const { email, password } = data;
+    const {email, password } = data;
     const onInputChange = e => {
         regUser({ ...data, [e.target.name]: e.target.value });
     };
@@ -32,27 +33,32 @@ function RegUser({ setToken }) {
 
 
     return (
-        <div class="popup-box">
-            <div class="box">
-                <div class="login-bg">
-                    <div class="login-img">
-                    <img src={'https://th.bing.com/th/id/R.71bb5610f583afa613bf6de7c16d05d6?rik=SHodgTm9OQ68PQ&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f12%2fBlue-and-Purple-Background-Free-Download.jpg&ehk=X9aqgux92YWnp7AJGbbp80lkqkePmFuOOfu6ZtDM5is%3d&risl=&pid=ImgRaw&r=0'} />
-                </div>
+        <div class="row justify-content-center bg-login">
+            <div class="col-8 mt-5 mb-5 bg-white" style={{padding:'0'}} >
+            <div class="row " >
+                                    <div class= "col-6" style={{padding:'0'}}>
+
+                        <img src={'https://sv1.picz.in.th/images/2021/10/26/uE8jtn.jpg'} 
+                    width='100%' height='600vh'/>
                 </div>
 
-                <div class="login-txt">
-                    <p class="txt-head">Already registerd? <button class="btn-regis">
-                        <a href="/users/login">Log in</a>
+                                <div class=" col-6" style={{padding:'4vh 8vh 4vh 8vh'}}>
+
+                    <p class="txt-head text-right">Already have an account? <button class="btn-regis">
+                        <a href="/users/login">Sign in</a>
                     </button></p>
-                <h2 className="text-left mb-4">Registration</h2>
+                    <br/>
+                <h2 className="text-left">Registration</h2>
+                        <h6 class="sub-topic mb-4">Register your account</h6>
                     <form onSubmit={e => onSubmit(e)}>
 
+                        
                         <div class="form-group mb-4">
                             <label>Email</label>
                             <input
                                 type="email"
                                 class="form-control"
-                                placeholder="Enter Email"
+                                placeholder="focus001@gmail.com"
                                 name="email"
                                 value={email}
                                 onChange={e => onInputChange(e)}
@@ -71,7 +77,13 @@ function RegUser({ setToken }) {
                         </div>
                         <button className="btn-login mb-1" >Register</button>
                     </form>
-                    
+                    <br/>
+                        <p class="txt-foot">Create account with
+                            <button><i class="text-primary bi bi-facebook"></i></button>
+                            <button><i class="text-danger bi bi-google"></i></button>
+                            <button><i class="text-primary bi bi-twitter"></i></button>
+                        </p>
+                </div>
                 </div>
             </div>
         </div>
